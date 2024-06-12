@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Welcome to KRypton linux laboratory"
+echo "this laboratory consits of 10 levels starting from user0 and each level you should escalate your privileges to next user"
+echo "for example we are user0 now; the path is like this: user0 -> user1 -> user2 -> ... -> user9 -> user10"
+echo "Also there is an extra bonus level which is about going from user10 to root. but that won't be easy. trust me :D"
+echo ""
+echo "This level is about learning how to abuse SUID binaries to escalate our privileges. TBH most levels are about abusing this feauture in linux :)"
+echo "OK, let the game begins."
+echo "HINT: search about what SUID is and how to use them for privilege escalation in Linux\n\n"
+
+
+read -p "Now give me your command: " cmd
+/bin/bash -c $cmd

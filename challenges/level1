@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Hmmm, so you passed the level0 huh? that was not a challenge at all, but a feature :D"
+echo "nevermind, after here the real game begins! Let's what you've got in your skillsets."
+echo "The author doesn't think that a simple ls command would cause security issues. prove him he is wrong."
+echo "Good Luck!"
+
+ls -la $1
