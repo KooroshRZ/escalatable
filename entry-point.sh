@@ -15,7 +15,7 @@ for user in $users; do
     cp /root/challenges/level$level_index /home/$user/
 
     chown $user /home/$user/level$level_index 
-    chmod 500 /home/$user/level$level_index
+    chmod 555  /home/$user/level$level_index
     let "level_index = level_index + 1"
     
 done
