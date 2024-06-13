@@ -5,7 +5,6 @@ RUN mkdir /var/run/sshd &&\
     echo > /etc/issue
 COPY banner /etc/motd
 COPY entry-point.sh /root/entry-point.sh
-COPY creds.txt /root/creds.txt
 COPY challenges /root/challenges
 EXPOSE 22
 ENTRYPOINT ["/root/entry-point.sh"]

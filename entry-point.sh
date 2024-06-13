@@ -1,10 +1,15 @@
 #!/bin/bash
 
-users=$(cat /root/creds.txt | cut -d ':' -f1)
-creds=$(cat /root/creds.txt)
+for i in $(seq 0 10); do
+    password=$(head -c 8 | xxd -p)
+    echo "user${i}:${password}" > /root/credentials.txt
+done
+
+users=$(cat /root/credentials.txt | cut -d ':' -f1)
+creds=$(cat /root/credentials.txt)
+
 
 let "level_index = 0"
-
 for user in $users; do
 
     deluser $user 2>/dev/null
