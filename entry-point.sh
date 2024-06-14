@@ -37,6 +37,7 @@ done
 echo "user0 ALL=(user1) NOPASSWD: /home/user0/level0" >> /etc/sudoers
 echo "user1 ALL=(user2) NOPASSWD:SETENV: /home/user1/level1" >> /etc/sudoers
 echo "user2 ALL=(user3) NOPASSWD: /home/user2/level2" >> /etc/sudoers
+echo "user3 ALL=(user4) NOPASSWD: /home/user3/level3" >> /etc/sudoers
 
 let "user_index = 0"
 for cred in $creds; do
