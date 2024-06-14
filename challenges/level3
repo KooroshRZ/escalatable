@@ -1,12 +1,12 @@
 #!/bin/bash
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" 2>/dev/null
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
 if [[ $UID == 1005 ]]; then
 
     echo "*******************************************************************************************************"
     echo "It seems there was a minor issue in previous level. the author has patched the problem."
-    echo "This level you should find next user's password. not by just being wild :D"
+    echo "This level you can't pass by just being wild :D"
     echo "Good luck"
     echo "*******************************************************************************************************"
 

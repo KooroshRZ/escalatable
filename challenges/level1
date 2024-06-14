@@ -4,12 +4,14 @@ if [[ $UID == 1003 ]]; then
 
     echo "*******************************************************************************************************"
     echo "Hmmm, so you passed the level0 huh? that was not a challenge at all, but a feature :D"
-    echo "nevermind, after here the real game begins! Let's what you've got in your skillsets."
+    echo "nevermind, after here the real game begins! Let's see what you've got in your skillsets."
     echo "The author doesn't think that a simple ls command would cause security issues. prove him he is wrong."
     echo "Good Luck!"
     echo "*******************************************************************************************************"
 
-    ls -la $1
+    read -p "Now give me a path to list its contents (remember this is running with user2 so you only have user2's permissins) : " user_path
+
+    ls -la $user_path
 else
     echo "Sorry come again later."
 fi
