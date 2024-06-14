@@ -1,1 +1,34 @@
 #!/bin/bash
+
+
+if [[ $UID == 1004 ]]; then
+
+    echo "*******************************************************************************************************"
+    echo "hmmm it seems you've ruined your path (PATH variable not your challenge path :D) here is your path fix it please."
+    echo "I'll never let you again ruin my path"
+    echo ""
+    $export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" 2>/dev/null
+    echo $PATH
+    echo ""
+    echo "you don't look that bad at all bacuase you could come up until here but from now: YOU SHALL NOT PASS !!!"
+    echo "The author has implemented an authentication system. he believes that this is worlds most secure authentication schema"
+    echo "Let's see if you can bypass it."
+    echo "*******************************************************************************************************"
+
+
+    super_secret_password=$(cat /dev/urandom | head -c 16 | xxd -p)
+    user2_password=$(cat /home/user3/cred3.txt)
+
+    read -s -p "Can you guess the password : " user_password
+
+    if [[ $super_secret_password == $user_password ]]; then
+        echo "Wow you guessed the super secret password. how wild! :P."
+        echo "For your reward here is next user's password. good luck on your remaining path."
+        echo $user2_password
+    else 
+        echo "Oh I'm sorry that's not correct"
+    fi
+
+else
+    echo "Oh what are you doing?!"
+fi

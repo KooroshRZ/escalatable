@@ -1,17 +1,23 @@
 #!/bin/bash
 
+echo "***************************************************************************************************************************************"
 echo "Welcome to KRypton linux laboratory"
 echo "this laboratory consits of 10 levels starting from user0 and each level you should escalate your privileges to next user"
 echo "for example we are user0 now; the path is like this: user0 -> user1 -> user2 -> ... -> user9 -> user10"
 echo "Also there is an extra bonus level which is about going from user10 to root. but that won't be easy. trust me :D"
 echo ""
+echo ""
 echo "This level is about learning how to abuse sudo to escalate your privileges. TBH most levels are about abusing this feauture in linux :)"
 echo "OK, let the game begins."
-echo "HINT: search about how you can list your sudo privileges. try to pay close attention to details of your privileges\n\n"
+echo "HINT: search about how you can list your sudo privileges. try to pay close attention to details of your privileges"
+echo ""
+echo "***************************************************************************************************************************************"
 
-if [[ $UID > 1001 ]]; then
+if [[ $UID == 1002 ]]; then
     read -p "Nice work. Now give me a command to execute: " cmd
     /bin/bash -c $cmd
 else
     echo "Oh you are not running this with user1. it seems you're on the wrong path!"
+    echo ""
 fi
+

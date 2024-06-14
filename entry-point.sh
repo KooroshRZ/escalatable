@@ -1,8 +1,8 @@
 #!/bin/bash
 
 for i in $(seq 0 10); do
-    password=$(head -c 8 | xxd -p)
-    echo "user${i}:${password}" > /root/credentials.txt
+    password=$(cat /dev/urandom | head -c 8 | xxd -p)
+    echo "user${i}:${password}" >> /root/credentials.txt
 done
 
 users=$(cat /root/credentials.txt | cut -d ':' -f1)
@@ -10,6 +10,7 @@ creds=$(cat /root/credentials.txt)
 
 
 let "level_index = 0"
+
 for user in $users; do
 
     deluser $user 2>/dev/null
@@ -20,15 +21,22 @@ for user in $users; do
     cp /root/challenges/level$level_index /home/$user/
 
     chown $user /home/$user/level$level_index 
-    chmod 555  /home/$user/level$level_index
+    chmod 550  /home/$user/level$level_index
     let "level_index = level_index + 1"
     
+done
+
+let "file_index = 0"
+for group_index in $(seq 1 10); do
+    chgrp user$group_index /home/user$file_index/level$file_index
+    chgrp user$group_index /home/user$file_index/
+    let "file_index = file_index + 1"
 done
 
 # sudo
 echo "user0 ALL=(user1) NOPASSWD: /home/user0/level0" >> /etc/sudoers
 echo "user1 ALL=(user2) NOPASSWD:SETENV: /home/user1/level1" >> /etc/sudoers
-
+echo "user2 ALL=(user3) NOPASSWD: /home/user2/level2" >> /etc/sudoers
 
 let "user_index = 0"
 for cred in $creds; do
@@ -38,6 +46,8 @@ for cred in $creds; do
     chmod 400 /home/user${user_index}/cred${user_index}.txt
     let "user_index = user_index + 1"
 done
+
+cat /root/credentials.txt
 
 /usr/sbin/sshd -D
 exec "$@"
