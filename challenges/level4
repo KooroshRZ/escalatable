@@ -1,1 +1,27 @@
 #!/bin/bash
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" 2>/dev/null
+
+if [[ $UID == 1006 ]]; then
+
+    echo "*******************************************************************************************************"
+    echo "OK OK, The author had maken a big mistake designing the authentication schema but it's over."
+    echo "He has patched the issue, trust me."
+    echo "No more wildness is accepted anymore. Also same outputs will make it impossible to distinguish between correct and wrong passes :D"
+    echo "*******************************************************************************************************"
+
+
+    super_secret_password=$(cat /dev/urandom | head -c 16 | xxd -p)
+
+    read -s -p "Can you guess the password : " user_password
+    echo ""
+
+    if [[ $user_password -eq $super_secret_password ]]; then
+        echo "Good Luck !!!"
+    else
+        echo "Good Luck !!!"
+    fi
+
+else
+    echo "Oh what are you doing?!"
+fi

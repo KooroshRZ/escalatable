@@ -7,7 +7,7 @@ if [[ $UID == 1004 ]]; then
     echo "hmmm it seems you've ruined your path (PATH variable not your challenge path :D) here is your path fix it please."
     echo "I'll never let you again ruin my path"
     echo ""
-    $export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" 2>/dev/null
+    export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" 2>/dev/null
     echo $PATH
     echo ""
     echo "you don't look that bad at all bacuase you could come up until here but from now: YOU SHALL NOT PASS !!!"
