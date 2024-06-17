@@ -31,6 +31,7 @@ for user in $users; do
 done
 
 cp /root/challenges/Zodd.py /home/user10/Zodd.py
+chmod +x /home/user10/Zodd.py
 
 
 let "file_index = 0"
