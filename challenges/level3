@@ -5,7 +5,7 @@ if [[ $UID == 1005 ]]; then
 
     echo "*******************************************************************************************************"
     echo "hmmm it seems you've spoiled your PATH. here is your original PATH, fix it please."
-    echo "I'll never let you again ruin my path (angry emoji)"
+    echo "I'll never let you again ruin my path 😡"
     echo ""
     export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
     echo $PATH

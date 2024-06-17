@@ -1,9 +1,27 @@
 #!/bin/bash
 
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 
-echo "Hmmm, you persisted for quite some time. but this game is over for you here !"
-echo "why should someone think about designing authentication schema in BASH ?!"
-echo "OK nevermind, After here it won't be easy, there is no way you can pass after here."
+if [[ $UID == 1008 ]]; then
 
+    echo "*******************************************************************************************************"
+    echo "Now here we are with even tougher challenges."
+    echo "The author is a huge math enthusiast, so he has designed a calculator based on bash"
+    echo "Let's forget everything and play with simple arithmatic and numbers. this will be fun trust me."
+    echo "The game is simple, you'll give me a simple arithmatic expression like 2+3 and I'll give you the result."
+    echo "Don't you ever dare to think about doing something wrong other than math 😡"
+    echo "*******************************************************************************************************"
+    echo ""
+
+    read -p "sample expression : " expression
+
+    blacklist='[`$&|;> ]'
+
+    if [[ $expression =~ $blacklist ]]; then
+        echo "Trying to do something funny?"
+    else
+        bash -c 'echo $(('$expression'))'
+    fi
+else
+    echo "Oh what are you doing?!"
+fi
