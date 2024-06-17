@@ -1,1 +1,25 @@
 #!/bin/bash
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
+if [[ $UID == 1010 ]]; then
+
+    echo "*******************************************************************************************************"
+    echo "Now the author zade be sime akhar and he wanna live his life dangerously by directly executing your command."
+    echo "But things won't work that easy. He has built a string blacklist that you may not pass."
+    echo "Let's see if you can defeat him."
+    echo "*******************************************************************************************************"
+    echo ""
+
+    read -p "cmd : " cmd
+
+    blacklist='[ `&|;><(){}a-zA-Z]'
+
+    if [[ $cmd =~ $blacklist ]]; then
+        echo "Trying to do something funny?"
+    else
+        bash -c $cmd
+    fi
+else
+    echo "Oh what are you doing?!"
+fi

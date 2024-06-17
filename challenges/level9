@@ -1,1 +1,26 @@
 #!/bin/bash
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
+if [[ $UID == 1011 ]]; then
+
+    echo "*******************************************************************************************************"
+    echo "Come on you're one step away from defeating the challenges author. don't give up."
+    echo "He is so disconsolate that all his scripts had security issues. He has done something crazy. He removed the PATH variable for no reason 😤"
+    echo "Let's push furthur to the last level where Zodd from Berzerk is awaiting to see if anyone dares to face him! 🤯"
+    echo "*******************************************************************************************************"
+    echo ""
+
+    read -p "cmd : " cmd
+
+    blacklist='([=&$|;><(){}/.?*"]|cred|PATH|path|txt)'
+
+    if [[ $cmd =~ $blacklist ]]; then
+        echo "Trying to do something funny?"
+    else
+        export PATH=""
+        /bin/bash -c "$cmd"
+    fi
+else
+    echo "Oh what are you doing?!"
+fi
