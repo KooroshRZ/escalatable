@@ -12,7 +12,7 @@ if [[ $UID == 1009 ]]; then
 
     read -p "sample expression : " expression
 
-    blacklist='([`$&|;> ]|bash|sh|dash|zsh|cat|more|head|tail|less|wget|ping|echo)'
+    blacklist='([*`$&|;> .]|bash|sh|dash|zsh|cat|more|head|tail|less|wget|ping|echo|txt|cred)'
 
     if [[ $expression =~ $blacklist ]]; then
         echo "Trying to do something funny?"

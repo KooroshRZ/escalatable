@@ -3,7 +3,8 @@
 echo "***************************************************************************************************************"
 echo "Congrats, you've successfully finished all levels if you can see this message. WELL DONE."
 echo "Here is your PATH fix it."
-echo "export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin""
+echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 echo "*******************************************************************************************************"
 
 echo ""

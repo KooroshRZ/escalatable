@@ -13,7 +13,7 @@ if [[ $UID == 1007 ]]; then
 
     super_secret_password=$(cat /dev/urandom | head -c 16 | xxd -p)
 
-    read -s -p "Can you guess the password : " user_password
+    read -p "Can you guess the password : " user_password
     echo ""
 
     if [[ $user_password -eq $super_secret_password ]]; then
