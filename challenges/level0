@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "***************************************************************************************************************************************"
-echo "Welcome to KRypton linux laboratory"
+echo "Welcome to my linux laboratory"
 echo "this laboratory consits of 10 levels starting from user0 and each level you should escalate your privileges to next user"
 echo "for example we are user0 now; the path is like this: user0 -> user1 -> user2 -> ... -> user9 -> user10"
 echo "Also there is an extra bonus level which is about going from user10 to root. but that won't be easy. trust me :D"

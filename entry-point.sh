@@ -23,6 +23,8 @@ for user in $users; do
     chown $user /home/$user/level$level_index 
     chmod 550  /home/$user/level$level_index
     let "level_index = level_index + 1"
+
+    chmod -w /home/$user
     
 done
 
@@ -35,10 +37,15 @@ done
 
 # sudo
 echo "user0 ALL=(user1) NOPASSWD: /home/user0/level0" >> /etc/sudoers
-echo "user1 ALL=(user2) NOPASSWD:SETENV: /home/user1/level1" >> /etc/sudoers
-echo "user2 ALL=(user3) NOPASSWD: /home/user2/level2" >> /etc/sudoers
+echo "user1 ALL=(user2) NOPASSWD: /home/user1/level1" >> /etc/sudoers
+echo "user2 ALL=(user3) NOPASSWD:SETENV: /home/user2/level2" >> /etc/sudoers
 echo "user3 ALL=(user4) NOPASSWD: /home/user3/level3" >> /etc/sudoers
 echo "user4 ALL=(user5) NOPASSWD: /home/user4/level4" >> /etc/sudoers
+echo "user5 ALL=(user6) NOPASSWD: /home/user5/level5" >> /etc/sudoers
+
+echo '/usr/bin/id' > /home/user1/check_id.sh
+chmod +x /home/user1/check_id.sh
+
 
 let "user_index = 0"
 for cred in $creds; do
