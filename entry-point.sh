@@ -7,7 +7,8 @@ done
 
 users=$(cat /root/credentials.txt | cut -d ':' -f1)
 creds=$(cat /root/credentials.txt)
-
+cat /dev/urandom | head -c 16 | xxd -p > /root/zodd_password.txt
+chmod 400 /root/zodd_password.txt
 
 let "level_index = 0"
 
@@ -28,6 +29,9 @@ for user in $users; do
     
 done
 
+cp /root/challenges/Zodd.py /home/user10/Zodd.py
+
+
 let "file_index = 0"
 for group_index in $(seq 1 10); do
     chgrp user$group_index /home/user$file_index/level$file_index
@@ -46,6 +50,7 @@ echo "user6 ALL=(user7) NOPASSWD: /home/user6/level6" >> /etc/sudoers
 echo "user7 ALL=(user8) NOPASSWD: /home/user7/level7" >> /etc/sudoers
 echo "user8 ALL=(user9) NOPASSWD: /home/user8/level8" >> /etc/sudoers
 echo "user9 ALL=(user10) NOPASSWD: /home/user9/level9" >> /etc/sudoers
+echo "user10 ALL=(root) NOPASSWD: /home/user10/Zodd.py" >> /etc/sudoers
 
 echo '/usr/bin/id' > /home/user1/check_id.sh
 chmod +x /home/user1/check_id.sh
