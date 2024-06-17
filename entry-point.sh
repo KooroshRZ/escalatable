@@ -55,7 +55,8 @@ echo "user9 ALL=(user10) NOPASSWD: /home/user9/level9" >> /etc/sudoers
 echo "user10 ALL=(root) NOPASSWD: /home/user10/Zodd.py" >> /etc/sudoers
 
 echo '/usr/bin/id' > /home/user1/check_id.sh
-chmod +x /home/user1/check_id.sh
+chmod 555 /home/user1/check_id.sh
+chown root:user2 /home/user1/check_id.sh
 
 
 let "user_index = 0"
