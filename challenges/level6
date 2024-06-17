@@ -11,6 +11,8 @@ if [[ $UID == 1008 ]]; then
     echo "The game is simple, you'll give me a simple arithmatic expression like 2+3 and I'll give you the result."
     echo "Don't you ever dare to think about doing something wrong other than math 😡"
     echo "*******************************************************************************************************"
+    echo "NOTE: this and next level may have several solutions, try to think not only out of box but also think like there is no box at all :D"
+    echo "*******************************************************************************************************"
     echo ""
 
     read -p "sample expression : " expression

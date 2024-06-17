@@ -43,6 +43,7 @@ echo "user3 ALL=(user4) NOPASSWD: /home/user3/level3" >> /etc/sudoers
 echo "user4 ALL=(user5) NOPASSWD: /home/user4/level4" >> /etc/sudoers
 echo "user5 ALL=(user6) NOPASSWD: /home/user5/level5" >> /etc/sudoers
 echo "user6 ALL=(user7) NOPASSWD: /home/user6/level6" >> /etc/sudoers
+echo "user7 ALL=(user8) NOPASSWD: /home/user7/level7" >> /etc/sudoers
 
 echo '/usr/bin/id' > /home/user1/check_id.sh
 chmod +x /home/user1/check_id.sh

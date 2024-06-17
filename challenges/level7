@@ -1,1 +1,24 @@
 #!/bin/bash
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+
+if [[ $UID == 1009 ]]; then
+
+    echo "*******************************************************************************************************"
+    echo "Oh how dare you exploit innocent math behaviour? The author is very angry"
+    echo "He has added even more blacklists. why are you so serious about proving him his solutions have security issues? :("
+    echo "*******************************************************************************************************"
+    echo ""
+
+    read -p "sample expression : " expression
+
+    blacklist='([`$&|;> ]|bash|sh|dash|zsh|cat|more|head|tail|less|wget|ping|echo)'
+
+    if [[ $expression =~ $blacklist ]]; then
+        echo "Trying to do something funny?"
+    else
+        bash -c 'echo $(('$expression'))'
+    fi
+else
+    echo "Oh what are you doing?!"
+fi
