@@ -22,7 +22,7 @@ for user in $users; do
     chmod o-x /home/$user/
     cp /root/challenges/level$level_index /home/$user/
 
-    chown root:$user /home/$user/level$level_index 
+    # chown root:$user /home/$user/level$level_index 
     chmod 555  /home/$user/level$level_index
     let "level_index = level_index + 1"
 
@@ -68,6 +68,63 @@ for cred in $creds; do
     chmod 440 /home/user${user_index}/cred${user_index}.txt
     let "user_index = user_index + 1"
 done
+
+
+# fix permissions
+
+#!/bin/bash
+
+chown root:root /home/user0/
+chown root:root /home/user1/
+chown root:root /home/user2/
+chown root:root /home/user3/
+chown root:root /home/user4/
+chown root:root /home/user5/
+chown root:root /home/user6/
+chown root:root /home/user7/
+chown root:root /home/user8/
+chown root:root /home/user9/
+chown root:root /home/user10/
+
+
+chmod 555 /home/user0/
+chmod 555 /home/user1/
+chmod 555 /home/user2/
+chmod 555 /home/user3/
+chmod 555 /home/user4/
+chmod 555 /home/user5/
+chmod 555 /home/user6/
+chmod 555 /home/user7/
+chmod 555 /home/user8/
+chmod 555 /home/user9/
+chmod 555 /home/user10/
+
+
+chown root:root /home/user0/level0
+chown root:root /home/user1/level1
+chown root:root /home/user2/level2
+chown root:root /home/user3/level3
+chown root:root /home/user4/level4
+chown root:root /home/user5/level5
+chown root:root /home/user6/level6
+chown root:root /home/user7/level7
+chown root:root /home/user8/level8
+chown root:root /home/user9/level9
+chown root:root /home/user10/level10
+
+
+chmod 550 /home/user0/level0
+chmod 550 /home/user1/level1
+chmod 550 /home/user2/level2
+chmod 550 /home/user3/level3
+chmod 550 /home/user4/level4
+chmod 550 /home/user5/level5
+chmod 550 /home/user6/level6
+chmod 550 /home/user7/level7
+chmod 550 /home/user8/level8
+chmod 550 /home/user9/level9
+chmod 550 /home/user10/level10
+
 
 cat /root/credentials.txt
 
