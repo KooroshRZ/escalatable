@@ -100,17 +100,17 @@ chmod 555 /home/user9/
 chmod 555 /home/user10/
 
 
-chown root:root /home/user0/level0
-chown root:root /home/user1/level1
-chown root:root /home/user2/level2
-chown root:root /home/user3/level3
-chown root:root /home/user4/level4
-chown root:root /home/user5/level5
-chown root:root /home/user6/level6
-chown root:root /home/user7/level7
-chown root:root /home/user8/level8
-chown root:root /home/user9/level9
-chown root:root /home/user10/level10
+chown user1:user0 /home/user0/level0
+chown user2:user1 /home/user1/level1
+chown user3:user2 /home/user2/level2
+chown user4:user3 /home/user3/level3
+chown user5:user4 /home/user4/level4
+chown user6:user5 /home/user5/level5
+chown user7:user6 /home/user6/level6
+chown user8:user7 /home/user7/level7
+chown user9:user8 /home/user8/level8
+chown user10:user9 /home/user9/level9
+chown user10:user10 /home/user10/level10
 
 
 chmod 550 /home/user0/level0
